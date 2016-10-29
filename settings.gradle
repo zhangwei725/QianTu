@@ -1,1 +1,6 @@
-include ':app', ':retrofitlib', ':common'
+include ':app'
+include ':retrofitlib'
+include ':common'
+include ':mvplibs'
+include ':rxlibs'
+
