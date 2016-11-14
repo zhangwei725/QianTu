@@ -20,9 +20,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "com.android.support:appcompat-v7:${libs.supportVersion}"
     compile "com.google.dagger:dagger:${libs.dagger2}"
     annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger2}"
+    compile "com.hannesdorfmann.mosby:mvp:${libs.mosby}"
+    compile "com.hannesdorfmann.mosby:viewstate:${libs.mosby}"
+    compile("com.hannesdorfmann.mosby:rx:${libs.mosby_di}", {
+        exclude group: "io.reactivex"
+    })
+    compile(group: 'com.hannesdorfmann.mosby', name: 'retrofit', version: "${libs.mosby_di}", {
+        exclude group: "com.squareup.retrofit"
+    })
+    compile project(':rxlibs')
 }

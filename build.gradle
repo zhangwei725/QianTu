@@ -1,7 +1,7 @@
 ext {
     configuration = [
             package          : "com.zw.qiantu",
-            libpackage          : "com.zw.lib",
+            libpackage       : "com.zw.lib",
             buildToolsVersion: "24.0.3",
             compileVersion   : 23,
             minSdk           : 14,
@@ -13,29 +13,37 @@ ext {
     libs = [
             supportVersion  : "25.0.0",
             retrofit        : "2.1.0",
-            rxandroid       : "1.2.1",
+            rxjava          : "2.0.1",
             dagger2         : "2.7",
             javax_annotation: "10.0-b28",
             butterknife     : "8.4.0",
             glide           : "3.7.0",
             rxcache         : "1.6.4",
-            junit           : "4.12"
+            junit           : "4.12",
+            greendao        : "3.2.0",
+            mosby           : "3.0.0-SNAPSHOT",
+            mosby_di        : "1.3.1",
+            bottom_bar      : "2.0.2"
     ]
 }
 
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
         maven { url "https://jitpack.io" }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
 }
 

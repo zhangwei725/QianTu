@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
 def cfg = rootProject.ext.configuration // 配置
 def libs = rootProject.ext.libs // 库
 android {
@@ -25,7 +26,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:${libs.supportVersion}"
     // Retrofit
-    compile "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    compile group:'com.squareup.retrofit2',name:'retrofit',version:"${libs.retrofit}",force : true
     compile "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
-
+    compile "org.greenrobot:greendao:${libs.greendao}"
 }
