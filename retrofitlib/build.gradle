@@ -19,7 +19,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -28,5 +27,11 @@ dependencies {
     // Retrofit
     compile group:'com.squareup.retrofit2',name:'retrofit',version:"${libs.retrofit}",force : true
     compile "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+    compile ("com.squareup.retrofit2:adapter-rxjava:${libs.retrofit}"){
+    }
     compile "org.greenrobot:greendao:${libs.greendao}"
+    compile group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '3.4.1'
+    compile project(':rxlibs')
+
+//    compile 'com.tamic.novate:novate:1.2.0'
 }

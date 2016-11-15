@@ -39,5 +39,4 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${libs.butterknife}"
     compile "com.roughike:bottom-bar:${libs.bottom_bar}"
     compile project(':common')
-
 }

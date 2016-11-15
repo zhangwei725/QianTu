@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <tab
+        icon="@mipmap/tab_home_normal"
+        id="@+id/tab_home"
+        title="首页"/>
+    <tab
+        icon="@mipmap/tab_club_press"
+        id="@+id/tab_special"
+        title="专题"/>
+    <tab
+        icon="@mipmap/tab_shop_normal"
+        id="@+id/tab_store"
+        title="店铺"/>
+    <tab
+        icon="@mipmap/tab_cart_normal"
+        id="@+id/tab_shop"
+        title="购物篮"/>
+    <tab
+        icon="@mipmap/tab_me_normal"
+        id="@+id/tab_my"
+        title="我的"/>
+</tabs>

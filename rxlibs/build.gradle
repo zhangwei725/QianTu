@@ -21,16 +21,28 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "com.android.support:appcompat-v7:${libs.supportVersion}"
     compile("com.github.VictorAlbertos.RxCache:runtime:${libs.rxcache}", {
         exclude group: 'io.reactivex', module: 'rxjava'
     })
-    compile project(':retrofitlib')
     compile "com.google.dagger:dagger:${libs.dagger2}"
     annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger2}"
     compile group: 'io.reactivex.rxjava2', name: 'rxandroid', version: "${libs.rxjava}"
-    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: "${libs.rxjava}", force: true
-
-
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: "${libs.rxjava}"
+    compile( group: 'com.jakewharton.rxbinding', name: 'rxbinding', version: "${libs.rxbinding}"){
+            exclude group: 'io.reactivex', module: 'rxjava'
+    }
+    compile (group: 'com.jakewharton.rxbinding', name: 'rxbinding-support-v4', version: "${libs.rxbinding}"){
+            exclude group: 'io.reactivex', module: 'rxjava'
+    }
+    compile (group: 'com.jakewharton.rxbinding', name: 'rxbinding-appcompat-v7', version: "${libs.rxbinding}"){
+        exclude group: 'io.reactivex', module: 'rxjava'
+    }
+    compile ( group: 'com.jakewharton.rxbinding', name: 'rxbinding-design', version: "${libs.rxbinding}"){
+        exclude group: 'io.reactivex', module: 'rxjava'
+    }
+    compile (group: 'com.jakewharton.rxbinding', name: 'rxbinding-recyclerview-v7', version: "${libs.rxbinding}"){
+        exclude group: 'io.reactivex', module: 'rxjava'
+    }
 }

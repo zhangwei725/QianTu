@@ -6,16 +6,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.zw.qiantu.MainActivity"
+    tools:context="com.zw.qiantu.mvp.view.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+    <FrameLayout
+        android:id="@+id/main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_bottom_bar"/>
+    <!--被选中状态的标签的颜色-->
+    <!--被选中状态的标签的颜色的透明度-->
+    <!--配合CoordinatorLayout使用-->
+    <!--是否在界面滑动时隐藏底部导航栏-->
+    <!--默认状态的标签的颜色的透明度-->
+    <!--默认状态的标签的颜色的颜色-->
+    <!--关联资源文件:必须设置!!!!-->
+    <!--模式:分为底部/竖向 true为竖向,默认为false-->
+    <!--设置字体的style-->
+    <!--<com.roughike.bottombar.BottomBar-->
+        <!--android:id="@+id/bottomBar"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@android:color/white"-->
+        <!--app:bb_activeTabAlpha="0.5"-->
+        <!--app:bb_activeTabColor="@color/colorAccent"-->
+        <!--app:bb_behavior="shifting"-->
+        <!--app:bb_inActiveTabAlpha="1"-->
+        <!--app:bb_inActiveTabColor="@color/colorPrimary"-->
+        <!--app:bb_tabXmlResource="@xml/bottom_bars_five"-->
+        <!--app:bb_tabletMode="true"-->
+        <!--app:bb_titleTextAppearance="@style/CustomTitleTextAppearance"-->
+        <!--/>-->
+
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/main_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:bb_activeTabColor="@color/main_color"
+        android:layout_alignParentBottom="true"
+        app:bb_tabXmlResource="@xml/bottom_bar_layout"/>
 </RelativeLayout>

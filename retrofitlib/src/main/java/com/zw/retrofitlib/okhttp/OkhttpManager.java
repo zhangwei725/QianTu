@@ -25,5 +25,4 @@ package com.zw.retrofitlib.okhttp;
 
 public class OkhttpManager {
 
-
 }

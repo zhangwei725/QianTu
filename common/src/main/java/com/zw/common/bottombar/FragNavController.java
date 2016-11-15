@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-
+/**
+ *
+ */
 public class FragNavController {
 
     @IntDef({TAB1, TAB2, TAB3, TAB4, TAB5})
@@ -101,14 +103,11 @@ public class FragNavController {
         if (poppingFrag != null) {
             FragmentTransaction ft = mFragmentManager.beginTransaction();
             ft.remove(poppingFrag);
-
-            //overly cautious fragment pop
             Stack<Fragment> fragmentStack = mFragmentStacks.get(mSelectedTabIndex);
             if (!fragmentStack.isEmpty()) {
                 fragmentStack.pop();
             }
 
-            //Attempt reattach, if we can't, try to pop from the stack and push that on
             Fragment fragment = showPreviousFragment(ft);
             if (fragment == null && !fragmentStack.isEmpty()) {
                 fragment = fragmentStack.peek();
@@ -151,10 +150,7 @@ public class FragNavController {
                     ft.commit();
                 }
             }
-
-            //Update the stored version we have in the list
             mFragmentStacks.set(mSelectedTabIndex, fragmentStack);
-
             mCurrentFrag = fragment;
             if (mNavListener != null) {
                 mNavListener.onFragmentTransaction(mCurrentFrag);
